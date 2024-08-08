@@ -1,4 +1,18 @@
-# Security Policy
+PyObject *item;
+int err;
+while (item = PyIter_NextItem(iterator, &err)) {
+    /* do something with item */
+    ...
+    /* release reference when done */
+    Py_DECREF(item);
+}
+Py_DECREF(iterator);
+if (err < 0) {
+    /* error */
+}
+else {
+    /* no error */
+}# Security Policy
 
 ## Supported Versions
 
